@@ -80,6 +80,9 @@ class SelectClassScreen extends StatelessWidget {
                       activeColor: Colors.black,
                     ),
                   ),
+                  SizedBox(
+                    width: 10,
+                  ),
                 ],
                 bottom: PreferredSize(
                   preferredSize: Size(double.infinity, 66),
@@ -256,6 +259,16 @@ class SubjectItem extends StatelessWidget {
                 child: CachedNetworkImage(
                   imageUrl: provider
                       .classList[listIndex].subjects[itemIndex].subjectImageUrl,
+                  placeholder: (context, str) => Container(
+                    height: 160,
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation(
+                          Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
               Container(
